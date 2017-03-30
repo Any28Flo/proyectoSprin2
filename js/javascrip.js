@@ -19,15 +19,15 @@ function insertaPendiente(nuevoObjeto){
   item.innerText = nuevoObjeto.titulo;
   //item.id=id1;
   pendiente.appendChild(item);
-  var elemento= document.createElement("li");
-  item.appendChild(elemento)
+  //var elemento= document.createElement("li");
+  //item.appendChild(elemento)
 
   var texto = document.createElement("input");
   texto.type="text";
   texto.id=ide2;
-  texto.value="hola";
+  texto.value="";
 
-  console.log(document.getElementById(texto.value));
+  console.log(texto.value);
   //console.log(texto.id);
 
 
@@ -40,10 +40,14 @@ function insertaPendiente(nuevoObjeto){
   btn.value="nuevo";
   btn.onclick = function(){
     var nuevoPendiente= document.createElement("li");
-    var texto = document.getElementById(ide2).value;
+  //  var texto = document.getElementById(ide2.value);
     pendiente.appendChild(nuevoPendiente);
-    var nodoTexto= document.createTextNode(texto);
+    var nodoTexto= document.createTextNode(texto.value);
     nuevoPendiente.appendChild(nodoTexto);
+    var borrar= document.createElement("input");
+    borrar.type="button";
+    borrar.value="Borrar";
+    pendiente.appendChild(borrar);
     //document.getElementById('mylocation').innerText=msg;
     //document.getElementById(ide).innerText=texto;
     //nuevoPendiente.innerText(texto);
