@@ -48,6 +48,10 @@ function insertaPendiente(nuevoObjeto){
     borrar.type="button";
     borrar.value="Borrar";
     pendiente.appendChild(borrar);
+    borrar.onclick=function(){
+      pendiente.removeChild(borrar);
+      pendiente.removeChild(nuevoPendiente);
+    }
     //document.getElementById('mylocation').innerText=msg;
     //document.getElementById(ide).innerText=texto;
     //nuevoPendiente.innerText(texto);
