@@ -1,37 +1,56 @@
 var arregloPendientes = [];
 var id=0;
 var id1=0;
+var ide= Date.now();
+var ide2= Date.now();
 function objPendiente(titulo,pendiente){
   this.titulo= titulo;
-  var lista= document.createElement("ul");
+
+  //var lista= document.createElement("ul");
 
 }
+
 function insertaPendiente(nuevoObjeto){
   var pendiente = document.createElement("p");
-  pendiente.id=id1;
+  //pendiente.id=id1;
 
   var item = document.createElement("ul");
+  item.id=ide;
   item.innerText = nuevoObjeto.titulo;
-  item.id=id;
+  //item.id=id1;
   pendiente.appendChild(item);
-  var btn = document.createElement("input");
-  btn.type="button";
-  btn.value="nuevo";
-    dfadfadsfs
+  var elemento= document.createElement("li");
+  item.appendChild(elemento)
 
   var texto = document.createElement("input");
   texto.type="text";
-  texto.id=id1;
+  texto.id=ide2;
+  texto.value="hola";
 
-  console.log(texto.id);
+  console.log(document.getElementById(texto.value));
+  //console.log(texto.id);
 
 
-  //var arreglo= regresaArreglo();
-
-  //arreglo.forEach(function(objPendiente){
 
       pendiente.appendChild(texto);
-      pendiente.appendChild(btn);
+
+
+  var btn = document.createElement("input");
+  btn.type="button";
+  btn.value="nuevo";
+  btn.onclick = function(){
+    var nuevoPendiente= document.createElement("li");
+    var texto = document.getElementById(ide2).value;
+    pendiente.appendChild(nuevoPendiente);
+    var nodoTexto= document.createTextNode(texto);
+    nuevoPendiente.appendChild(nodoTexto);
+    //document.getElementById('mylocation').innerText=msg;
+    //document.getElementById(ide).innerText=texto;
+    //nuevoPendiente.innerText(texto);
+    //elemento.appendChild(nuevoPendiente);
+
+  }
+pendiente.appendChild(btn);
 
 
     //item.innerText =objPendiente.titulo;
@@ -55,6 +74,10 @@ function insertaBoton(nuevoObjeto){
   var btn = document.createElement("input");
   btn.type="button";
   btn.value="Crear pendiente";
+  btn.onclick= function(){
+    var nuevoPendiente = document.createElement("ul");
+    var texto = document.getElementById("")
+  }
 
   document.getElementById("listaPendientes")
 }
