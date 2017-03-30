@@ -12,11 +12,20 @@ function objPendiente(titulo,pendiente){
 
 function insertaPendiente(nuevoObjeto){
   var pendiente = document.createElement("p");
+  pendiente.id=ide;
+  var nodoPadre=pendiente.id;
   //pendiente.id=id1;
 
   var item = document.createElement("ul");
   item.id=ide;
   item.innerText = nuevoObjeto.titulo;
+  var eliminar= document.createElement("input");
+  eliminar.type="button";
+  eliminar.value="BORRAR >.<"
+  eliminar.onclick=function(){
+    listaPendientes.removeChild(pendiente);
+  }
+  pendiente.appendChild(eliminar);
   //item.id=id1;
   pendiente.appendChild(item);
   //var elemento= document.createElement("li");
